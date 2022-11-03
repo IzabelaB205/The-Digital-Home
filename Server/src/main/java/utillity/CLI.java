@@ -59,6 +59,7 @@ public class CLI implements IObservableCLI, Runnable{
                 }
             }
 
+            setState(false); // the operator shutdown the server
             inputReader.close();
             outputWriter.close();
         } catch (IOException e) {
