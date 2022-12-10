@@ -1,6 +1,7 @@
 package main.java.services;
 
 import main.java.memory.CacheUnit;
+import main.java.server.Response;
 
 public class Controller<T> implements IController<T>{
     private final CacheUnit<T> cacheUnit;
@@ -15,12 +16,12 @@ public class Controller<T> implements IController<T>{
     }
 
     @Override
-    public void switchDevice(String body) {
-        cacheUnit.switchDevice(body);
+    public Response<String> switchDevice(String body) {
+        return cacheUnit.switchDevice(body);
     }
 
     @Override
-    public void setValueDevice(String body) {
-        cacheUnit.setValueDevice(body);
+    public Response<String> setValueDevice(String body) {
+        return cacheUnit.setValueDevice(body);
     }
 }
